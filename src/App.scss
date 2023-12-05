@@ -1,0 +1,1077 @@
+body {
+  margin: 0 auto;
+  background-color: #0f1014;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.NavBar {
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100vw;
+  background: linear-gradient(
+    180deg,
+    #0f1014 0%,
+    rgba(15, 16, 20, 0.8) 50%,
+    rgba(15, 16, 20, 0.4) 90%,
+    rgba(15, 16, 20, 0) 100%
+  );
+  > a > img {
+    margin: 0 0 0 40px;
+    width: 70px;
+  }
+  > div {
+    margin: 0 60px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    &:hover > a {
+      filter: blur(1px);
+    }
+    > a {
+      z-index: 3;
+      text-decoration: none;
+      display: flex;
+      height: auto;
+      justify-content: center;
+      font-weight: 100;
+      transition: 1s;
+      > .Link-Name {
+        color: #ffffffa2;
+        opacity: 0;
+        z-index: 1;
+        font-size: 19px;
+        height: 22px;
+        transition: 0.5s;
+      }
+      > .Icons-Nav {
+        transition-duration: 0.5s;
+        color: rgba(255, 255, 255, 0.636);
+        z-index: 2;
+        font-size: 18px;
+        margin-left: 50px;
+      }
+      &:active {
+        box-shadow: 10px 10px 10px 10 white;
+      }
+      &:hover {
+        filter: blur(0px);
+        > .Icons-Nav {
+          color: #fff;
+          font-size: 1.5rem;
+        }
+        > .Link-Name {
+          padding: 0px 0 4px 0;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &:hover a > .Link-Name {
+      opacity: 1;
+      color: #fff;
+      margin: -5px 0 0 25px;
+      padding: 2px 0 0 0;
+      animation: ler 1s;
+    }
+    @keyframes ler {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.Home-Page {
+  z-index: 0;
+}
+
+.InDetails {
+  z-index: -1;
+  width: 100vw;
+  height: 80vh;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  > img {
+    z-index: -1;
+    width: 100vw;
+    opacity: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      0deg,
+      #0f1014 0%,
+      rgba(15, 16, 20, 1) 10%,
+      rgba(15, 16, 20, 0.5) 40%,
+      rgba(15, 16, 20, 0.3) 70%,
+      rgba(15, 16, 20, 0) 100%
+    );
+  }
+
+  > div {
+    z-index: 1;
+    padding: 0 0 0 60px;
+    width: calc(100vw - 60px);
+    top: 35%;
+    position: absolute;
+    > h2 {
+      font-size: 1.75rem;
+      margin: 0;
+    }
+    > .RelDur-Det {
+      gap: 4px;
+      height: 45px;
+      width: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      > h4 {
+        text-transform: uppercase;
+        padding: 0 4px;
+        font-size: 1.25rem;
+      }
+
+      > h6 {
+        font-size: 1.75rem;
+        font-weight: 900;
+      }
+    }
+
+    > p {
+      font-weight: 100;
+      font-size: 1.15rem;
+      word-spacing: normal;
+      width: 450px;
+    }
+  }
+}
+
+.MovColVert {
+  margin-top: -5px;
+  z-index: 1;
+  padding: 10px 0;
+  background-color: #0f1014;
+  width: 100vw;
+
+  > h2 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 10px 30px;
+    font-size: 24px;
+  }
+
+  > .MovColData {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    overflow: visible;
+    display: flex;
+
+    > button {
+      z-index: 99;
+      position: absolute;
+      padding: 0 25px;
+      height: 100%;
+      top: 0%;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    > .LeftBtn {
+      left: 1.5%;
+      background-color: #0f1014;
+      background: linear-gradient(
+        90deg,
+        #0f1014 0%,
+        rgba(15, 16, 20, 1) 25%,
+        rgba(15, 16, 20, 0.7) 50%,
+        rgba(15, 16, 20, 0.4) 70%,
+        rgba(15, 16, 20, 0.2) 100%
+      );
+    }
+
+    > .RightBtn {
+      right: 0%;
+      background-color: #0f1014;
+      background: linear-gradient(
+        270deg,
+        #0f1014 0%,
+        rgba(15, 16, 20, 0.8) 70%,
+        rgba(15, 16, 20, 0.6) 80%,
+        rgba(15, 16, 20, 0.4) 90%,
+        rgba(15, 16, 20, 0.2) 100%
+      );
+    }
+
+    &:hover > button {
+      opacity: 1;
+    }
+
+    > button {
+      font-weight: 100;
+      font-size: 28px;
+      border: 0px solid white;
+      color: #fff;
+      padding: 50px 15px;
+    }
+
+    > .InMovList {
+      gap: 25px;
+      border-radius: 10px;
+      margin-left: 2.5%;
+      width: 100vw;
+      padding: 25px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      scroll-behavior: smooth;
+
+      > :first-child {
+        margin-left: 24px;
+      }
+
+      > :last-child {
+        margin-right: 24px;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.MovVertCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 180px;
+  height: 270px;
+  color: #fff;
+  transition: 1s;
+  transition-delay: 0.25s;
+  > .BackGroundImage {
+    border-radius: 10px;
+    display: block;
+    width: 180px;
+  }
+  > .ForeGroundImg {
+    opacity: 0;
+    width: 100%;
+    display: none;
+    transition: 1s;
+    border-radius: 10px;
+    transition-delay: 0.25s;
+  }
+  > .Mov-Card-Det {
+    opacity: 0;
+    margin-top: -45px;
+    height: 217px;
+    width: 180px;
+    display: none;
+    padding: 8px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(
+      0deg,
+      #0f1014 0%,
+      rgba(15, 16, 20, 1) 80%,
+      rgba(15, 16, 20, 0.5) 90%,
+      rgba(15, 16, 20, 0) 100%
+    );
+    transition: 1s;
+    transition-delay: 0.25s;
+    > h2 {
+      overflow: hidden;
+      width: 160px;
+      font-weight: 100;
+      font-size: 15px;
+      margin: 0px 0 0 10px;
+    }
+
+    > p {
+      width: 160px;
+      height: 65px;
+      white-space: normal;
+      overflow: hidden;
+      margin: 5px 10px -25px 10px;
+      font-weight: 100;
+      font-size: 12px;
+    }
+
+    > .Card-Mov-Det {
+      margin-left: 5px;
+      margin-top: 2.5px;
+      transition: 1s;
+      transition-delay: 0.25s;
+      padding: 3px 0;
+      display: flex;
+      > h6 {
+        margin: 1px 3px;
+        font-size: large;
+        font-weight: 900;
+      }
+      > h4 {
+        text-transform: uppercase;
+        margin: 4px 3px;
+        font-weight: 100;
+        font-size: 16px;
+      }
+    }
+    > .Links-tag {
+      > .View-More {
+        font-weight: 100;
+        font-size: 10px;
+        color: #fff;
+        margin: 40px 0px 0px 8px;
+        padding: 6px 20px;
+        border: 0.5px solid #fff;
+        border-radius: 10px;
+        background-color: #0f1014;
+        transition: 0.25s;
+        > span {
+          transition: 0.5s;
+          padding: 5px 5px;
+          font-weight: 900;
+        }
+        &:hover {
+          background-color: #fff;
+          color: #000;
+          > span {
+            color: #000;
+            padding: 5px 0px 5px 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 6px 6px 70px -20px orange;
+
+    transform: scale(1.15);
+    > .BackGroundImage {
+      display: none;
+    }
+    > .ForeGroundImg {
+      display: block;
+      opacity: 1;
+      width: 100%;
+    }
+    > .Mov-Card-Det {
+      display: flex;
+      opacity: 1;
+    }
+  }
+}
+
+.MovColHor {
+  margin-top: -5px;
+  z-index: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #0f1014;
+  width: 100vw;
+  > h2 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0px 0 10px 30px;
+    font-size: 24px;
+  }
+  > .MovColData {
+    width: calc(100vw);
+    height: auto;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    > button {
+      position: absolute;
+      padding: 0 25px;
+      height: 100%;
+      top: 0%;
+      opacity: 0;
+      transition: 0.5s;
+      z-index: 99;
+    }
+    > .LeftBtn {
+      left: 1.5%;
+      background: linear-gradient(
+        90deg,
+        #0f1014 0%,
+        rgba(15, 16, 20, 1) 25%,
+        rgba(15, 16, 20, 0.7) 50%,
+        rgba(15, 16, 20, 0.4) 70%,
+        rgba(15, 16, 20, 0.2) 100%
+      );
+    }
+    > .RightBtn {
+      right: 0%;
+      background-color: #0f1014;
+      background: linear-gradient(
+        270deg,
+        #0f1014 0%,
+        rgba(15, 16, 20, 0.8) 70%,
+        rgba(15, 16, 20, 0.6) 80%,
+        rgba(15, 16, 20, 0.4) 90%,
+        rgba(15, 16, 20, 0.2) 100%
+      );
+    }
+    &:hover {
+      > button {
+        opacity: 1;
+      }
+    }
+    > button {
+      font-size: 28px;
+      font-weight: 100;
+      border: 0px solid white;
+      color: #fff;
+      padding: 50px 15px;
+    }
+    > div {
+      margin-left: 1.5%;
+      width: 100%;
+      border-radius: 15px;
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      scroll-behavior: smooth;
+      > :first-child {
+        margin-left: 24px;
+      }
+      > :last-child {
+        margin-right: 24px;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.MovHorCard {
+  margin: 30px 0px 0px 0px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 180px;
+  color: #fff;
+  transition: 1s;
+  transition-delay: 0.25s;
+
+  > img {
+    z-index: 1;
+    transition: 1s;
+    transition-delay: 0.25s;
+    border-radius: 10px;
+    width: 180px;
+  }
+  > .Mov-Card-Det {
+    z-index: 91;
+    opacity: 0;
+    width: 180px;
+    height: 100px;
+    padding: 4px 0;
+    margin-top: -60px;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(
+      0deg,
+      #0f1014 0%,
+      rgba(15, 16, 20, 1) 60%,
+      rgba(15, 16, 20, 0.7) 80%,
+      rgba(15, 16, 20, 0.4) 90%,
+      rgba(15, 16, 20, 0) 100%
+    );
+    transition: 1s;
+    transition-delay: 0.25s;
+    > h2 {
+      overflow-x: hidden;
+      width: 160px;
+      z-index: 99;
+      font-weight: 100;
+      margin: 35px 0 -5px 10px;
+      font-size: 14px;
+    }
+    > .Links-tag {
+      > .View-More {
+        font-weight: 100;
+        font-size: 10px;
+        color: #fff;
+        margin: 10px 0px 10px 8px;
+        padding: 6px 20px;
+        border: 0.5px solid #fff;
+        border-radius: 10px;
+        background-color: #0f1014;
+        transition: 0.25s;
+        > span {
+          transition: 0.5s;
+          padding: 5px 5px;
+          font-weight: 900;
+        }
+        &:hover {
+          background-color: #fff;
+          color: #000;
+          > span {
+            color: #000;
+            padding: 5px 0px 5px 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    margin: 0px 0px 0px 0px;
+    transform: scale(1.17) translateY(0px);
+    background-size: 260px;
+    box-shadow: 6px 6px 70px -20px orange;
+    > .Mov-Card-Det {
+      opacity: 1;
+      > h2 {
+        display: block;
+      }
+      display: block;
+      > .View-More {
+        display: block;
+      }
+    }
+  }
+}
+
+.Links-tag {
+  text-decoration: none;
+}
+
+.MovDetails {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  height: auto;
+  > div {
+    margin-left: 15%;
+    width: 90%;
+    gap: 5%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    margin-top: 90px;
+    > img {
+      width: 40%;
+    }
+    > .BacImg {
+      display: none;
+    }
+    > span {
+      width: 35%;
+      display: grid;
+      place-content: center;
+    }
+  }
+}
+
+.MovieSearch {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    margin-top: 80px;
+    display: grid;
+    place-content: center;
+    width: 90vw;
+    > .field {
+      display: flex;
+      justify-content: center;
+      > input {
+        background-color: #0f1014;
+        height: 2rem;
+        width: 30rem;
+        color: #fff;
+        border-radius: 10px;
+        border: 1px solid gray;
+        padding: 0 0 0 10px;
+      }
+      > button {
+        font-size: 16px;
+        color: #fff;
+        background-color: #0f1014;
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: 0 0 0 15px;
+        padding: 0 50px;
+      }
+    }
+
+    .MoviesList {
+      width: 80%;
+      display: flex;
+      margin: 2.5% 0 0 5%;
+      color: #fff;
+      border: 1px solid white;
+      > img {
+        width: 180px;
+      }
+      > .Bacimg {
+        display: none;
+      }
+      > span {
+        margin: 0 0 0 20px;
+        > h2 {
+          color: #fff;
+        }
+        > p {
+          width: 80%;
+        }
+
+        > .Card-Mov-Det {
+          gap: 4px;
+          padding: 3px 0;
+          display: flex;
+          > h6 {
+            margin: 1px 3px;
+            font-size: large;
+            font-weight: 900;
+          }
+          > h4 {
+            text-transform: uppercase;
+            margin: 4px 3px;
+            font-weight: 100;
+            font-size: 16px;
+          }
+        }
+        > .Links-tag {
+          > .View-More {
+            font-weight: 100;
+            font-size: 14px;
+            color: #fff;
+            margin: 10px 0px 10px 8px;
+            padding: 6px 20px;
+            border: 0.5px solid #fff;
+            border-radius: 10px;
+            background-color: #0f1014;
+            transition: 0.25s;
+            > span {
+              transition: 0.5s;
+              padding: 5px 5px;
+              font-weight: 900;
+            }
+            &:hover {
+              background-color: #fff;
+              color: #000;
+              > span {
+                color: #000;
+                padding: 5px 0px 5px 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Preloader {
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1024px) {
+  .NavBar {
+    background: linear-gradient(
+      180deg,
+      #0f1014 0%,
+      rgba(15, 16, 20, 0.8) 50%,
+      rgba(15, 16, 20, 0.4) 90%,
+      rgba(15, 16, 20, 0) 100%
+    );
+    > a {
+      > img {
+        display: none;
+      }
+    }
+    > div {
+      width: 100vw;
+      margin: 20px 0 0 0;
+      justify-content: space-evenly;
+      &:hover {
+        > a {
+          filter: blur(0px);
+        }
+      }
+      > a {
+        height: 50px;
+        width: 60px;
+        > .Link-Name {
+          display: none;
+        }
+        > .Icons-Nav {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  .MovDetails {
+    width: 100vw;
+    > div {
+      margin-left: 0%;
+      width: 90%;
+      gap: 5%;
+      flex-direction: column;
+      margin-top: 90px;
+      > .BacImg {
+        display: block;
+        width: 100%;
+      }
+      > .PosImg {
+        display: none;
+      }
+      > span {
+        width: 100%;
+        > h1 {
+          margin: 15px 0 -10px 0;
+          font-size: 1.25rem;
+        }
+        > p {
+          margin: 15px 0 0px 0;
+          font-size: 1rem;
+        }
+        > a {
+          margin: 10px 0 0px 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .NavBar {
+    > div {
+      > a {
+        width: 60px;
+        > .Link-Name {
+          display: none;
+        }
+        > .Icons-Nav {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  .InDetails {
+    height: auto;
+    position: relative;
+    > img {
+      width: 100vw;
+    }
+    > div {
+      padding: 0 0 0 0px;
+      width: calc(100vw - 20px);
+      z-index: 2;
+      margin: 0 0 0 30px;
+      top: 25%;
+      position: absolute;
+      > h1 {
+        font-size: 1.5rem;
+      }
+      > .RelDur-Det {
+        height: 30px;
+        width: 350px;
+        > h4 {
+          text-transform: uppercase;
+          padding: 0 4px;
+          font-size: 1rem;
+        }
+        > h6 {
+          margin: -5px 0 0 0;
+          font-size: 1.5rem;
+          font-weight: 900;
+        }
+      }
+      > p {
+        font-weight: 100;
+        font-size: 0.75rem;
+        word-spacing: normal;
+        width: 300px;
+      }
+    }
+  }
+
+  .MovVertCard {
+    width: 120px;
+    height: 210px;
+    > .BackGroundImage {
+      width: 120px;
+    }
+    > .Mov-Card-Det {
+      opacity: 0;
+      margin-top: -45px;
+      height: 200px;
+      width: 120px;
+      padding: 8px 0;
+      > h2 {
+        font-size: 12px;
+        width: 100px;
+      }
+      > p {
+        width: 100px;
+        font-size: 8px;
+      }
+      > .Card-Mov-Det {
+        > h4 {
+          margin: 4px 4px;
+          font-size: 10px;
+        }
+        > h6 {
+          font-size: small;
+        }
+      }
+      > .Links-tag {
+        > .View-More {
+          font-size: 7px;
+          margin: 35px 0px -10px 8px;
+          padding: 4px 15px;
+        }
+      }
+    }
+  }
+
+  .MovColVert {
+    margin-top: 0px;
+    padding: 10px 0;
+    > h2 {
+      // margin: 0px 0 10px 30px;
+      font-size: 14px;
+    }
+    > .MovColData {
+      width: calc(100vw);
+      > button {
+        display: none;
+      }
+    }
+  }
+
+  .MovColHor {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    > h2 {
+      margin-top: 10px;
+      // margin-bottom: 10px;
+      font-size: 14px;
+    }
+    > .MovColData {
+      > button {
+        display: none;
+      }
+    }
+  }
+
+  .MovHorCard {
+    width: 130px;
+    > img {
+      width: 130px;
+    }
+    > .Mov-Card-Det {
+      width: 130px;
+      height: 90px;
+      padding: 0px 0;
+      margin-top: -40px;
+      > h2 {
+        font-size: 10px;
+      }
+      > .Links-tag {
+        > .View-More {
+          font-size: 7px;
+          margin: 10px 0px -10px 8px;
+          padding: 4px 10px;
+        }
+      }
+    }
+  }
+
+  .MovDetails {
+    width: 100vw;
+    > div {
+      margin-left: 0%;
+      width: 90%;
+      gap: 5%;
+      flex-direction: column;
+      margin-top: 90px;
+      > .BacImg {
+        display: block;
+        width: 100%;
+      }
+      > .PosImg {
+        display: none;
+      }
+      > span {
+        width: 100%;
+        > h1 {
+          margin: 15px 0 -10px 0;
+          font-size: 1.25rem;
+        }
+        > p {
+          margin: 15px 0 0px 0;
+          font-size: 1rem;
+        }
+        > a {
+          margin: 10px 0 0px 0;
+        }
+      }
+    }
+  }
+
+  .MovieSearch {
+    > div {
+      margin-top: 80px;
+      > .field {
+        > input {
+          height: 1.75rem;
+          width: 15rem;
+        }
+        > button {
+          font-size: 12px;
+          padding: 0 25px;
+        }
+      }
+
+      .MoviesList {
+        width: 90%;
+        flex-direction: column;
+        > .ForImg {
+          display: none;
+        }
+        > .Bacimg {
+          display: block;
+          width: 100%;
+        }
+        > span {
+          > h2 {
+            font-size: 1.25rem;
+          }
+          > p {
+            font-size: 0.75rem;
+            width: 90%;
+          }
+
+          > .Card-Mov-Det {
+            gap: 4px;
+            padding: 3px 0;
+            display: flex;
+            > h6 {
+              font-size: 1rem;
+            }
+            > h4 {
+              font-size: 0.75rem;
+            }
+          }
+          > .Links-tag {
+            > .View-More {
+              font-size: 10px;
+              margin: 10px 0px 20px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .NavBar {
+    height: 40px;
+    > div {
+      > a {
+        height: 50px;
+        width: 60px;
+        > .Icons-Nav {
+          font-size: 15px;
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  .InDetails {
+    > div {
+      margin: 0 0 0 30px;
+      > h1 {
+        font-size: 1rem;
+      }
+      > .RelDur-Det {
+        height: 10px;
+        margin: 0px 0;
+        width: 350px;
+        > h4 {
+          padding: 0 4px;
+          font-size: 0.75rem;
+        }
+        > h6 {
+          margin: -5px 0 0 0;
+          font-size: 1rem;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+
+  .MovDetails {
+    > div {
+      margin-top: 60px;
+      > span {
+        width: 100%;
+        > h1 {
+          margin: 15px 0 -10px 0;
+          font-size: 1rem;
+        }
+        > p {
+          width: 80%;
+          margin: 15px 0 0px 0;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+  .MovieSearch {
+    > div {
+      margin-top: 60px;
+      > .field {
+        > input {
+          height: 1.75rem;
+          width: 10rem;
+        }
+        > button {
+          font-size: 12px;
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+}
